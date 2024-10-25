@@ -34,7 +34,7 @@ bool game_over = false;
 
 int main(void)
 {
-    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Geometry Dash");
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Neon Dash");
 
     Texture2D scarfy = LoadTexture("./assets/scarfy.png");
     Rectangle frame_rec = (Rectangle){ .x = 0.0f, .y = 0.0f, .width = scarfy.width/6.0f, .height = (float)scarfy.height };
