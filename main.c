@@ -67,7 +67,7 @@ int main(void)
     size_t spacing = 0;
     for (size_t i = 0; i < MAX_OBSTACLES; ++i) {
         obstacles[i].pos.x = spacing;
-        obstacles[i].pos.y = GROUND_Y - fireballs[0].height * (GetRandomValue(0, 10) > 5 ? 0.5f : (GetRandomValue(0, 10) > 5 ? 0.5f : 1.5f));
+        obstacles[i].pos.y = GROUND_Y - fireballs[0].height * (GetRandomValue(0, 100) > 30 ? 0.5f : 1.5f);
         spacing += (size_t)fireballs[0].width + GetRandomValue(600, 800);
 
         obstacles[i].vel = (Vector2){ .x = 0, .y = 0 };
@@ -210,6 +210,14 @@ drawing:
             EndMode2D();
 
         EndDrawing();
+    }
+
+    for (size_t i = 0; i < 5; ++i) {
+        UnloadTexture(fireballs[i]);
+    }
+
+    for (size_t i = 0; i < 7; ++i) {
+        UnloadTexture(explosions[i]);
     }
 
     UnloadTexture(background);
