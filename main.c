@@ -124,10 +124,10 @@ int main(void)
 
             obstacles[i].pos = Vector2Add(obstacles[i].pos, obstacles[i].vel);
 
-            float playerLeft = player.pos.x - frame_rec.width/2.0f;
-            float playerRight = playerLeft + frame_rec.width;
-            float playerTop = player.pos.y;
-            float playerBottom = playerTop + frame_rec.height;
+            float playerLeft = player.pos.x - frame_rec.width/2.0f + 25;
+            float playerRight = playerLeft + frame_rec.width - 25;
+            float playerTop = player.pos.y + 25;
+            float playerBottom = playerTop + frame_rec.height - 25;
 
             float obstacleLeft = obstacles[i].pos.x;
             float obstacleRight = obstacleLeft + fireballs[0].width * 0.3f;
