@@ -29,6 +29,7 @@ typedef struct Obstacle {
 
 Obstacle obstacles[MAX_OBSTACLES] = { 0 };
 
+size_t score = 0;
 bool game_over = false;
 
 int main(void)
@@ -140,6 +141,10 @@ int main(void)
                 game_over = true;
                 break;
             }
+
+            if (playerRight >= obstacleLeft) {
+                score += 1;
+            }
         }
 
         scrollingBack -= 0.1f*4;
@@ -208,6 +213,11 @@ drawing:
                 }
             
             EndMode2D();
+
+            char score_txt[32] = { 0 };
+            sprintf(score_txt, "Score: %ld", score);
+            score_txt[31] = 0;
+            DrawText(score_txt, 50, 50, 20, YELLOW);
 
         EndDrawing();
     }
